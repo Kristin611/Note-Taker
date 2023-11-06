@@ -17,12 +17,12 @@ app.use(express.static('public'));
 
 //to create a route to notes.html file 
 app.get('/notes', (req, res) =>
-  res.sendFile(path.join(__dirname, '/public/notes.html'))
+  res.sendFile(path.join(__dirname, './public/notes.html'))
 );
 
 //to create a wildcard route that will send users to index.html
 app.get('/', (req, res) =>
-  res.sendFile(path.join(__dirname, '/public/index.html'))
+  res.sendFile(path.join(__dirname, './public/index.html'))
 );
 
 
