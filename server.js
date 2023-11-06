@@ -21,7 +21,7 @@ app.get('/notes', (req, res) =>
 );
 
 //to create a wildcard route that will send users to index.html
-app.get('/', (req, res) =>
+app.get('*', (req, res) =>
   res.sendFile(path.join(__dirname, './public/index.html'))
 );
 

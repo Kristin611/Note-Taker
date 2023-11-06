@@ -5,12 +5,13 @@ const fs = require('fs');
 const path = require('path')
 const { v4:uuidv4 } = require('uuid')
 
-
+//http GET method to read db.json file
 router.get('/', (req, res) => {
     readFromFile('./db/db.json').then((data) =>  res.json(JSON.parse(data)))
    
 });
 
+//http POST method to post/ceate user input
 router.post('/', (req, res) => {
    const notesData = JSON.parse(fs.readFileSync('./db/db.json', 'utf8'))
    const newNotes = {
@@ -23,6 +24,7 @@ router.post('/', (req, res) => {
    res.json(notesData)
 });
 
+//HTTP delete method to delete user data
 router.delete('/:id', (req, res) => {
     const notesData = fs.readFileSync('./db/db.json', 'utf8')
     const parsedNotes = JSON.parse(notesData)
